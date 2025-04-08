@@ -78,7 +78,3 @@ Consulta la sección sobre [despliegue](https://facebook.github.io/create-react-
 ## Autor
 
 Desarrollado por Miguel Loaiza.
-
-## Licencia
-
-Este proyecto está bajo la licencia MIT.
