@@ -1,0 +1,70 @@
+{
+  "name": "formulario",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mi aplicación en Electron con React",
+  "author": "Miguel Loaiza",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.8.1",
+    "cors": "^2.8.5",
+    "exceljs": "^4.3.0",
+    "express": "^4.18.2",
+    "fs": "0.0.1-security",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "concurrently \"cross-env BROWSER=none npm --prefix src start\" \"wait-on http://localhost:3000 && electron .\"",
+    "frontend": "react-scripts start",
+    "backend": "nodemon backend/server.js",
+    "build": "npm --prefix src run build",
+    "electron-build": "electron-builder",
+    "package": "electron-builder --dir",
+    "make": "electron-builder --win --mac --linux"
+  },
+  "build": {
+    "appId": "com.miempresa.miapp",
+    "productName": "Mi Aplicación",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^34.3.0",
+    "electron-builder": "^25.1.8",
+    "electron-is-dev": "^3.0.1",
+    "nodemon": "^3.1.9",
+    "wait-on": "^8.0.2"
+  }
+}
